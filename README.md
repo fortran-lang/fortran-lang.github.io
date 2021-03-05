@@ -11,6 +11,9 @@ It's derived from https://github.com/neovim/neovim.github.io.
 
 * [PACKAGES](./PACKAGES.md): adding an entry to the [Package index](https://fortran-lang.org/packages)
 
+* [TRANSLATING](./TRANSLATING.md): details on how to translate the webpage in a new language
+
+
 ## Setup
 
 This assumes that you already have a recent Ruby with RubyGems.

@@ -1,25 +1,26 @@
 ---
 layout: default
-title: News archive
+title: page.news.archive.title
 ---
 
-{% include nav.html active='News' %}
+{% capture active %}{% t nav_key.news %}{% endcapture %}
+{% include nav.html active=active %}
 
 <section class="front-section">
   <div class="container">
     <div class="newsletter col-wide">
 
-      <h1><a href="{{ site.baseurl }}/news">News</a> / Archive</h1>
+      <h1><a href="{{ site.baseurl }}/news">{% t nav_key.news %}</a> / {% t news.archive %}</h1>
 
       {% assign postsByYearMonth = site.categories.newsletter | group_by_exp:"post", "post.date | date: '%B %Y'"  %}
       {% for yearMonth in postsByYearMonth %}
-        <h3>{{ yearMonth.name }}</h3>
-          <ul>
-            {% for post in yearMonth.items %}
-              <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+      <h3>{{ yearMonth.name }}</h3>
+      <ul>
+        {% for post in yearMonth.items %}
+        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
       {% endfor %}
 
     </div>

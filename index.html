@@ -1,73 +1,43 @@
 ---
 layout: default
-title: Home
+title: page.home.title
 ---
 
-{% include nav.html active='Home' %}
+{% capture active %}{% t nav_key.home %}{% endcapture %}
+{% include nav.html active=active %}
 
 <section class="masthead">
-  <h1>High-performance parallel programming language</h1>
-  <p><a href="{{ site.baseurl }}/learn/" class="btn">Get started</a></p>
+  <h1>{% t home.tagline %}</h1>
+  <p><a href="{{ site.baseurl }}/learn/" class="btn">{% t home.get_started %}</a></p>
 </section>
 
 <section class="front-section">
   <div class="container">
     <div class="col-wide">
-      <h2>Features</h2>
-
-      <h3>High performance</h3>
-      Fortran has been designed from the ground-up for computationally 
-      intensive applications in science and engineering.
-      Mature and battle-tested compilers and libraries allow you to write
-      code that runs close to the metal, fast.
-
-      <h3>Statically and strongly typed</h3>
-      Fortran is statically and strongly typed, which allows the 
-      compiler to catch many programming errors early on for you.
-      This also allows the compiler to generate efficient binary code.
-
-      <h3>Easy to learn and use</h3>
-      Fortran is a relatively small language that is surprisingly easy 
-      to learn and use.
-      Expressing most mathematical and arithmetic operations over large 
-      arrays is as simple as you'd write them as equations on a whiteboard.
-
-      <h3>Versatile</h3>
-      Fortran allows you to write code in a style that best fits your problem:
-      Imperative, procedural, array-oriented, object-oriented, or functional.
-
-      <h3>Natively parallel</h3>
-      Fortran is a natively parallel programming language
-      with intuitive array-like syntax to communicate data between CPUs.
-      You can run almost the same code on a single CPU, 
-      on a shared-memory multicore system, or on a distributed-memory 
-      HPC or cloud-based system.
-      Coarrays, teams, events, and collective subroutines
-      allow you to express different parallel programming patterns
-      that best fit your problem at hand.
+      {% tf features.html %}
 
     </div>
 
     <div class="col-narrow">
 
       <div class="news-section">
-        <h2 id="news"><i class="far fa-newspaper"></i> News</h2>
+        <h2 id="news"><i class="far fa-newspaper"></i> {% t nav_key.news %}</h2>
 
         {% comment %} <dl class="nvim-posts"> {% endcomment %}
-        <table>
-        {% assign posts_to_show = 5 %}
-        {% for post in site.posts limit:posts_to_show %}
-          <tr>
-            <td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>&nbsp;&nbsp; </td>
-            <td style="white-space: nowrap; text-align: right">{{ post.date | date:"%d %b %Y" }}</td>
-          </tr>
-          {% comment %} <dd></dd> {% endcomment %}
-        {% endfor %}
-        </table>
-        {% comment %} </dl> {% endcomment %}
+          <table>
+            {% assign posts_to_show = 5 %}
+            {% for post in site.posts limit:posts_to_show %}
+            <tr>
+              <td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>&nbsp;&nbsp; </td>
+              <td style="white-space: nowrap; text-align: right">{{ post.date | date:"%d %b %Y" }}</td>
+            </tr>
+            {% comment %} <dd></dd> {% endcomment %}
+            {% endfor %}
+          </table>
+          {% comment %} </dl> {% endcomment %}
 
-        <p><a href="{{ site.baseurl }}/news">More…</a></p>
-      </br>
+        <p><a href="{{ site.baseurl }}/news">{% t more %}…</a></p>
+        </br>
         <a class="twitter-timeline" data-height="500" href="https://twitter.com/fortranlang?ref_src=twsrc%5Etfw"></a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -80,39 +50,16 @@ title: Home
 <section class="front-section shaded">
   <div class="container">
     <div class="col-wide">
-      <h2 id="faqs">FAQ</h2>
+      <h2 id="faqs">{% t global.faq %}</h2>
 
       <dl class="faqs">
-        <h3>What is the status of Fortran?</h3>
-        Fortran is still in active development. 
-	The latest revision of the language is <a href="https://isotc.iso.org/livelink/livelink?func=ll&objId=19441669&objAction=Open">Fortran 2018</a>,
-	and the next one, with the working title Fortran 202x,
-	is planned for release in the next few years.
-	Further, open source projects like the
-	<a href="https://github.com/fortran-lang/stdlib">Standard Library</a>
-	and the
-	<a href="https://github.com/fortran-lang/fpm">Fortran Package Manager</a>
-        are in active development.
-
-        <h3>What is Fortran used for?</h3>
-	Fortran is mostly used in domains that adopted computation
-	early--science and engineering. 
-        These include numerical weather and ocean prediction, 
-	computational fluid dynamics, applied math, statistics, and finance.
-	Fortran is the dominant language of High Performance Computing,
-	and is used to 
-	<a href="https://top500.org">benchmark the fastest supercomputers in the world</a>.
-
-        <h3>Should I use Fortran for my new project?</h3>
-	If you're writing a program or a library to perform fast arithmetic
-	computation over large numeric arrays, Fortran is the optimal tool 
-	for the job.
+        {% tf faqs.html %}
 
       </dl>
     </div>
 
     <div class="col-narrow">
-      <h2 id="chat">Join us!</h2>
+      <h2 id="chat">{% t home.join_us %}</h2>
 
       {% include mailing_list.html %}
 
@@ -122,11 +69,7 @@ title: Home
 
       {% include rss_feed.html %}
 
-      <h3><i class="fab fa-github"></i> Open source</h3>
-      <p>
-      Contribute code, report bugs and request features at 
-      <a href="https://github.com/fortran-lang" target="_blank" >GitHub</a>.
-      </p>
+      {% tf open_source.html %}
 
     </div>
 
@@ -135,27 +78,14 @@ title: Home
 
 <section class="front-section">
   <div class="container">
-    <h2>Make Fortran better</h2>
+    <h2>{% t home.make_fortran_better %}</h2>
 
     <div class="col-narrow">
-      <h3>Write proposals</h3>
-      <p>
-      Have an idea about how to improve the language?
-      You can write new proposals or contribute to existing proposals 
-      to the Fortran Standard Committee
-      on <a href="https://github.com/j3-fortran/fortran_proposals">GitHub</a>.
-      </p>
+      {% tf write_proposals.html %}
     </div>
 
     <div class="col-narrow">
-      <h3>Develop tools</h3>
-      <p>
-      You can also help make Fortran better by contributing to its
-      suite of tools, such as
-      <a href="https://github.com/fortran-lang/stdlib">Standard Library</a>,
-      <a href="https://github.com/fortran-lang/fpm">Package Manager</a>, or
-      <a href="https://github.com/fortran-lang/fortran-lang.org">this website</a>.
-      </p>
+      {% tf develop_tools.html %}
     </div>
 
   </div>
@@ -166,11 +96,7 @@ title: Home
   <div class="container">
 
     <div class="col-narrow">
-      <h3>Write Fortran software</h3>
-      <p>
-      Or just write Fortran software for your research, business, or schoolwork.
-      You can learn how to get started <a href="{{site.baseurl}}/learn/">here</a>.
-      </p>
+      {% tf write_software.html %}
     </div>
 
   </div>

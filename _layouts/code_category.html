@@ -2,24 +2,25 @@
 layout: default
 ---
 
-{% include nav.html active='Packages' %}
+{% capture active %}{% t nav_key.packages %}{% endcapture %}
+{% include nav.html active=active %}
 
 <section class="masthead">
-    <h1>Featured Open Source Projects</h1>
-    <h3>A rich ecosystem of high-performance code</h3>
+    <h1>{% t packages.featured %}</h1>
+    <h3>{% t packages.tagline %}</h3>
   </section>
   
   <section class="front-section">
     <div class="container">
       <div class="col-wide">
         
-          <h2> <a href='{{ site.baseurl }}/packages'> Packages</a> / 
+         <h2> <a href='{{ site.baseurl }}/packages'> {% t nav_key.packages %}</a> / 
             {% if page.feather-icon %}
             <i data-feather="{{ page.feather-icon }}"></i>
             {% endif %}
-            {{page.title}}</h2>
+            {% t page.title %}</h2>
           <h3>
-              {{page.description}}
+              {% t page.description %}
           </h3>
   
           <table class="projects-table">
@@ -98,7 +99,7 @@ layout: default
               {{ project.description }}
           </td></tr>
           <tr><td colspan="7" class="light small">
-            <b>Tags: </b>{{ project.tags }}
+          <b>{% t packages.tags %}: </b>{{ project.tags }}
         </td></tr>
           <tr><td colspan="7"></td></tr>
           {% endfor %} 
@@ -114,10 +115,8 @@ layout: default
     <div class="container">
       <div class="col-wide">
         <!-- <h2 id="faqs">FAQ</h2> -->
-        
-        See
-	  <a href="https://github.com/fortran-lang/fortran-lang.org/blob/master/PACKAGES.md" target="_blank">
-      <i class="devicon-github-plain colored"></i> here</a> for how to get your project listed.
+
+        {% tf packages/footer_text.html %}
   
     </div>
   </section>

@@ -8,12 +8,12 @@ layout: default
   <div class="container">
     <div class="newsletter col-wide">
 
-      <h1>{{ page.title }}</h1>
+      <h1>{% t page.title %}</h1>
 
       <div style="margin-top: 0.5em; margin-bottom: 0.5em;">
         <i>{{ page.date | date: "%B %d, %Y" }}</i>
         {% if page.author != null %}
-          <p><i>Authors:</i> {{ page.author }}</p>
+          <p><i>{% t news.authors %}</i> {{ page.author }}</p>
         {% endif %}
       </div>
 

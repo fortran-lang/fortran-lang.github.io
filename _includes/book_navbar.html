@@ -25,7 +25,7 @@
 
   <a href="{{site.baseurl}}/learn#book-index">
     <i class="fas fa-arrow-circle-left"></i>
-    Back to Learn Fortran index 
+    {% t book.back_to_learn %}
   </a>
 
   <h3>
@@ -42,12 +42,12 @@
     <!-- Add link to book introduction (index) -->
     {% if page.permalink == book.link %}
       <li><b><a href="{{site.baseurl}}{{ book.link }}">
-        Introduction</a></b></li>
+        {% t book.introduction %}</a></b></li>
         <ul id="page-nav"></ul>
         {% assign nextPage = 0 %}
     {% else %}
       <li><a href="{{site.baseurl}}{{ book.link }}">
-        Introduction</a></li>
+        {% t book.introduction %}</a></li>
     {% endif %}
 
     <!-- List pages in this book -->

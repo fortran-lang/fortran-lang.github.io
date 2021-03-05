@@ -1,16 +1,31 @@
 <footer>
   <div class="container">
     <div class="col-wide">
-    {% for nav in site.data.nav %}
-      <a href="{{ site.baseurl }}{{ nav.url }}">{{ nav.title }}</a>
-      {% unless forloop.last %}
-        &middot;
-      {% endunless %}
-    {% endfor %}
+      <p>
+      {% for nav in site.translations[site.lang].nav %}
+        <a href="{{ site.baseurl }}{{ nav.url }}">{{ nav.title }}</a>
+        {% unless forloop.last %}
+          &middot;
+        {% endunless %}
+      {% endfor %}
+      </p>
+      <p>
+      {% for lang in site.languages %}
+        {% assign this_lang = site.data.langs[lang] %}
+        {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
+        <a href="{{ site.baseurl_root }}{{ page.url }}">{{ this_lang }}</a>
+        {% else %}
+        <a href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{{ this_lang }}</a>
+        {% endif %}
+        {% unless forloop.last %}
+          &middot;
+        {% endunless %}
+      {% endfor %}
+      </p>
     </div>
 
     <div class="col-narrow">
-      This site's source is <a href="https://github.com/fortran-lang/fortran-lang.org/">hosted on GitHub</a>.
+      {% t global.hosted_on_github %}
     </div>
   </div>
 </footer>

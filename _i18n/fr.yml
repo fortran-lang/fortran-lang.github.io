@@ -1,0 +1,160 @@
+global:
+  title: Le langage de programmation Fortran
+  description: "Le langage de programmation Fortran"
+  discourse: Discourse
+  twitter: Twitter
+  github: GitHub
+  documentation: Documentation
+  contributing: Contribuer
+  faq: Questions fréquentes
+  rss_feed: Fil RSS
+  rss_client: >-
+    Suivez notre 
+    <a href="https://fortran-lang.org/news.xml" target="_blank">fil RSS</a>.
+  mailing_list: Liste de diffusion
+  toggle_nav: Basculer le mode de navigation
+  site_preview: Aperçu du site
+  site_preview_info: Ceci est un aperçu de modifications non publiées de
+  pull_request: Requête de publication
+  join_discourse: >-
+    Venez discuter Fortran avec nous sur le forum
+    <a href="https://fortran-lang.discourse.group" target="_blank">fortran-lang.discourse.</a>
+  hosted_on_github: >-
+    Les sources de ce site sont <a href="https://github.com/fortran-lang/fortran-lang.org/">hébergées sur GitHub</a>.
+  subscribe_to_mailing_list: >-
+    Abonnez-vous à notre <a href="https://groups.io/g/fortran-lang" target="_blank">liste de diffusion</a>
+    pour discuter de tout ce qui concerne le Fortran, annoncer de nouveaux 
+    projets Fortran, discuter du développement des principaux projets de 
+    fortran-lang.org (stdlib, fpm), et vous tenir au courant.
+
+page:
+  home:
+    title: Accueil
+  learn:
+    title: Apprendre le Fortran
+    description: Ressources pédagogiques du niveau débutant jusqu'à expert
+  news:
+    title: Actualités
+    archive:
+      title: Actualités archivées
+  compilers:
+    title: Compilateurs Fortran
+  community:
+    title: La communauté Fortran-lang
+    description: Une collaboration pour l'avancement du Fortran
+  packages:
+    title: Paquets Fortran
+    description: Un riche écosystème de codes haute performance
+    search:
+      title: Chercher
+    category:
+      data-types:
+        title: Types de données et conteneurs
+        description: Bibliothèques de types de données avancés et classes conteneurs
+      examples:
+        title: Exemples et modèles
+        description: Programmes de démonstration et modèles en Fortran
+      fpm:
+        title: Registre des paquets FPM
+        description: Paquets inclus dans fpm-registry
+      graphics:
+        title: Graphisme, tracé et interfaces utilisateur
+        description: Bibliothèques pour tracer des données, manipuler des images et générer des interfaces utilisateur
+      interfaces:
+        title: Bibliothèques d'interfaçage
+        description: Bibliothèques pour l'interfaçage avec d'autres systèmes, langages, ou appareils
+      numerical:
+        title: Calcul numérique
+        description: Bibliothèques Fortran pour l'algèbre linéaire, l'optimisation, la résoltion d'équations, etc.
+      programming:
+        title: Utilitaires pour programmer
+        description: Gestion des erreurs, journalisation, documentation et tests
+      scientific:
+        title: Codes scientifiques
+        description: Applications et bibliothèques relatives aux mathématiques appliquées et aux problèmes  scientifiques
+      strings:
+        title: Caractères et chaînes
+        description: Bibliothèques pour manipuler caratères et chaînes
+      io:
+        title: Entrées, sorties et analyse syntaxique
+        description: Bibliothèques pour lire, écrire et analyser des fichiers et des entrées
+      libraries:
+        title: Bibliothèques
+        description: Bibliothèques Fortran généralistes
+
+home:
+  tagline: Un langage de programmation parallèle haute performance
+  get_started: Se lancer !
+  more: Plus
+  join_us: Rejoignez-nous!
+  make_fortran_better: Participez à l'évolution du Fortran
+
+nav:
+- title: Apprendre
+  url: /learn/
+- title: Compilateurs
+  url: /compilers/
+- title: Communauté
+  url: /community/
+- title: Paquets
+  url: /packages/
+- title: Actualités
+  url: /news/
+
+nav_key:
+  home: Accueil
+  learn: Apprendre
+  compilers: Compilateurs
+  community: Communauté
+  packages: Paquets
+  news: Actualités
+
+learn:
+  getting_started: Se lancer !
+  quickstart_tutorial: Tutoriel rapide
+  fortran_lang_discourse: Forum Fortran-lang
+  minibook_tutorials: Tutoriels sous forme de mini-livres
+  other_resources: Autres ressources
+  on_the_web: Sur le web
+  in_print: Sous forme imprimée
+
+book:
+  authors: Auteurs
+  introduction: Introduction
+  back_to_learn: Retour à Apprendre le Fortran
+  important: Important
+  note: Note
+  tip: Astuce
+
+book_nav:
+  back: Précédent
+  next: Suivant
+
+news:
+  archive: Archive
+  authors: Auteurs
+  back_to_news: Retour à Actualités
+  more: Plus
+  read_more: Plus d'actualités
+
+packages:
+  featured: Sélection de projets open source
+  tagline: Un riche écosystème de codes haute performance
+  back: Retour à la liste des paquets
+  fpm_registry: Registre FPM
+  fpm_projects: >-
+    Projets compatibles avec le
+    <a href="https://github.com/fortran-lang/fpm" target="_blank">
+    gestionnaire de paquets Fortran fpm</a>
+  tags: Etiquettes
+  author: Auteur
+  maintainer: Mainteneur
+  find_a_package: Chercher un paquet
+  featured_topics: Mots-clés les plus courants
+  browse: Parcourir les paquets par catégorie
+  search_for_a_project: Chercher un projet
+  search_for_a_package: Chercher un paquet
+
+community:
+  header: Projets de la communauté Fortran-lang
+  get_involved: Participez

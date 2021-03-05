@@ -4,6 +4,7 @@ markdown: kramdown
 
 title: Fortran Programming Language
 description: "Fortran Programming Language"
+languages: ["en", "es", "fr"]
 
 news:
     name: Fortran Newsletter
@@ -13,7 +14,10 @@ news:
 
 url: "https://fortran-lang.org"
 
+exclude_from_localizations: ["assets"]
+
 plugins:
+  - jekyll-multiple-languages-plugin
 
 exclude:
     - CNAME

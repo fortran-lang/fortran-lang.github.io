@@ -1,0 +1,1 @@
+../../en/_posts/2020-08-01-Fortran-Newsletter-August-2020.md

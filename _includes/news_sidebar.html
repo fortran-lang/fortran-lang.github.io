@@ -1,5 +1,5 @@
 <div class="col-narrow">
-  <h3><i class="far fa-newspaper"></i> News</h3>
+   <h3><i class="far fa-newspaper"></i> {% t nav_key.news %}</h3>
   
     <table>
     {% assign posts_to_show = 5 %}
@@ -11,7 +11,7 @@
       {% comment %} <dd></dd> {% endcomment %}
     {% endfor %}
     </table>
-    <p><a href="{{ site.baseurl }}/news">More…</a></p>
+    <p><a href="{{ site.baseurl }}/news">{% t news.more %}…</a></p>
 
   </br>
 

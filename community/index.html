@@ -1,179 +1,120 @@
 ---
 layout: default
-title: Fortran-lang Community
-description: Collaboration for the advancement of Fortran
+title: page.community.title
+description: page.community.description
 ---
 
-{% include nav.html active='Community' %}
+{% capture active %}{% t nav_key.community %}{% endcapture %}
+{% include nav.html active=community %}
 
 <section class="masthead">
-  <h1>{{ page.title }}</h1>
-  <h3>{{ page.description }}</h3>
+  <h1>{% t page.title %}</h1>
+  <h3>{% t page.description %}</h3>
 </section>
 
 <section class="front-section shaded">
-    <div class="container">
-      <h2>Fortran-lang Community Projects</h2>
-  
-      <div class="col-narrow">
+  <div class="container">
+    <h2>{% t community.header %}</h2>
 
-        <h3><i data-feather="database"></i>
-          Fortran Standard Library (stdlib)</h3>
-        <p>
-        A community-driven project for a <i>de facto</i> "standard" library for Fortran.
-        The stdlib project is both a specification and a reference implementation, developed in
-        cooperation with the Fortran Standards Committee.
-      </p>
+    <div class="col-narrow">
+
+      {% tf community/stdlib.html %}
       <span style="display: inline-block;">
         <i class="fab fa-github"></i>
         <a href="https://github.com/fortran-lang/stdlib" target="_blank" rel="noopener"><b>
-            GitHub </b></a>
-            &ensp;
+            {% t global.github %} </b></a>
+        &ensp;
       </span>
       <span style="display: inline-block;">
         <i class="fas fa-info-circle"></i>
         <a href="https://stdlib.fortran-lang.org/" target="_blank" rel="noopener"><b>
-          Documentation </b></a>
-          &ensp;
+            {% t global.documentation %} </b></a>
+        &ensp;
       </span>
       <span style="display: inline-block;">
-        <i class="fab fa-git-alt"></i> 
+        <i class="fab fa-git-alt"></i>
         <a href="https://github.com/fortran-lang/stdlib/blob/master/WORKFLOW.md" target="_blank" rel="noopener"><b>
-        Contributing </b></a>
+            {% t global.contributing %} </b></a>
       </span>
 
-      
-
-        <h3><i data-feather="package"></i>
-          Fortran Package Manager (fpm)</h3>
-        <p>
-        A prototype project to develop a common build system for Fortran packages
-        and their dependencies.
-        </p>
-        <span style="display: inline-block;">
-          <i class="fab fa-github"></i>
-          <a href="https://github.com/fortran-lang/fpm" target="_blank" rel="noopener"><b>
-              GitHub </b></a>
-              &ensp;
-        </span>
-        <span style="display: inline-block;">
-          <i class="fas fa-info-circle"></i>
-          <a href="https://github.com/fortran-lang/fpm/blob/master/PACKAGING.md" target="_blank" rel="noopener"><b>
-            Documentation </b></a>
-            &ensp;
-        </span>
-        <span style="display: inline-block;">
-          <i class="fab fa-git-alt"></i>
-          <a href="https://github.com/fortran-lang/fpm/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener"><b>
-          Contributing </b></a>
-        </span>
 
 
-        <h3><i data-feather="globe"></i>
-          fortran-lang.org</h3>
-        <p>
-        This website is open source and contributions are welcome!
-        </p>
-        <span style="display: inline-block;">
-          <i class="fab fa-github"></i>
-          <a href="https://github.com/fortran-lang/fortran-lang.org" target="_blank" rel="noopener"><b>
-              GitHub </b></a>
-              &ensp;
-        </span>
-        <span style="display: inline-block;">
-          <i class="fab fa-git-alt"></i> 
-          <a href="https://github.com/fortran-lang/fortran-lang.org/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener"><b>
-          Contributing </b></a>
-        </span>
+      {% tf community/fpm.html %}
+      <span style="display: inline-block;">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/fortran-lang/fpm" target="_blank" rel="noopener"><b>
+            {% t global.github %} </b></a>
+        &ensp;
+      </span>
+      <span style="display: inline-block;">
+        <i class="fas fa-info-circle"></i>
+        <a href="https://github.com/fortran-lang/fpm/blob/master/PACKAGING.md" target="_blank" rel="noopener"><b>
+            {% t global.documentation %} </b></a>
+        &ensp;
+      </span>
+      <span style="display: inline-block;">
+        <i class="fab fa-git-alt"></i>
+        <a href="https://github.com/fortran-lang/fpm/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener"><b>
+            {% t global.contributing %} </b></a>
+      </span>
 
-        </br>
+      {% tf community/website.html %}
+      <span style="display: inline-block;">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/fortran-lang/fortran-lang.org" target="_blank" rel="noopener"><b>
+            {% t global.github %} </b></a>
+        &ensp;
+      </span>
+      <span style="display: inline-block;">
+        <i class="fab fa-git-alt"></i>
+        <a href="https://github.com/fortran-lang/fortran-lang.org/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener"><b>
+            {% t global.contributing %} </b></a>
+      </span>
 
-      </div>
-
-      <div class="col-narrow">
-        <div id="fortran-lang-gh-feed" style="height: 500px;"></div>
-      </div>
-      
-    
+      </br>
 
     </div>
-  </section>
+
+    <div class="col-narrow">
+      <div id="fortran-lang-gh-feed" style="height: 500px;"></div>
+    </div>
+
+
+
+  </div>
+</section>
 
 <section class="front-section">
   <div class="container">
-  <h2>Get Involved</h2>
-    
-  <div class="col-narrow">
-    <h3>
-      <i data-feather="message-circle"></i>
-      Join the Discussion</h3>
-    <p>
-      The easiest way to join the community and contribute is by
-      commenting on issues and pull requests in the project
-      repositories.
-      <!-- Open discussion is vital to making project decisions,
-      and benefits greatly from varied expertise and insight across the community. -->
-      Whether Fortran beginner or seasoned veteran, your feedback and comments are most
-      welcome in guiding the future of Fortran-lang.
+    <h2>{% t community.get_involved %}</h2>
 
+    <div class="col-narrow">
+      {% tf community/join_the_discussion.html %}
+    </div>
 
-    </p>
-  </div>
+    <div class="col-narrow">
+      {% tf community/build_and_test.html %}
+    </div>
 
-  <div class="col-narrow">
-    <h3> <i data-feather="terminal"></i>
-      Build and Test</h3>
-      <p>
-        Get more involved with each project by cloning, building and testing
-        it on your own machine(s) and with your own codes;
-        if something doesn't work, create an issue to let us know!
-        We value user feedback highly, be it a bug report, feature request, or
-        suggestion for documentation.
-      </p>
-  </div>
-  
-</br>
+    </br>
 
-  <div class="col-narrow">
-    <h3> <i data-feather="edit"></i>
-      Contributor Guide</h3>
-      <p>
-        Want to contribute code and content?
-        Check out the contributor guides in each repository for information
-        on the project workflow and recommended practices.
-      </p>
-      <ul>
-        <li> <a href="https://github.com/fortran-lang/stdlib/blob/master/WORKFLOW.md" target="_blank" rel="noopener">Contributor guide for stdlib</a> </li>
-        <li> <a href="https://github.com/fortran-lang/fpm/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener">Contributor guide for fpm</a> </li>
-        <li> <a href="https://github.com/fortran-lang/fortran-lang.org/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener">Contributor guide for fortran-lang.org</a> </li>
-      </ul>
-  </div>
+    <div class="col-narrow">
+      {% tf community/contributor_guide.html %}
+    </div>
 
-  <div class="col-narrow">
-    <h3><i data-feather="smile"></i>
-      Community Conduct</h3>
-      <p>
-        As a community, we strive to make participation in our discussions and projects a friendly and
-        harassment-free experience for everyone.
+    <div class="col-narrow">
+      {% tf community/community_conduct.html %}
+    </div>
 
-      </p>
-      <p> See the full 
-      <a href="https://github.com/fortran-lang/stdlib/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Code of Conduct</a>
-      </p>
-  </div>
-  
   </div>
 </section>
 
 <section class="front-section shaded">
   <div class="container">
-    <h2>Fortran-lang Contributors</h2>
-    <p>
-      We are grateful for every contribution made by all members of the community.
-    </p>
+    {% tf community/fortran_lang_contributors.html %}
     <div id="gh-contributors-slider"></div>
     <div id="gh-contributors"></div>
-</div>
+  </div>
 </section>
 
 
@@ -184,7 +125,5 @@ description: Collaboration for the advancement of Fortran
     selector: "#fortran-lang-gh-feed",
     limit: 20 // optional
   });
-  
-</script>
-  
 
+</script>

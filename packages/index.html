@@ -1,64 +1,48 @@
 ---
 layout: default
-title: Fortran Packages
-description: A rich ecosystem of high-performance code
+title: page.packages.title
+description: page.packages.description
 ---
 
-{% include nav.html active='Packages' %}
-
+{% capture active %}{% t nav_key.packages %}{% endcapture %}
+{% include nav.html active=active %}
 
 <section class="masthead">
-  <h1>{{ page.title }}</h1>
-  <h3>{{ page.description }}</h3>
+  <h1>{% t page.title %}</h1>
+  <h3>{% t page.description %}</h3>
 </section>
 
 <section class="front-section shaded">
-    <div class="container">
-      <h2>Find a Package</h2>
-  
-      <div class="col-center">
-        <form class="search-form" action="{{ site.baseurl }}/packages/search" method="get">
-          <input type="text" name="query" class="search-box" placeholder="Search for a package">
-          <input type="submit" value="" class="search-btn">
-        </form>
-      </div>
+  <div class="container">
+    <h2>{% t packages.find_a_package %}</h2>
 
-      <div class="col-narrow">
-        <h3><i data-feather="list"></i>
-          Package Index</h3>
-        <p>
-          The fortran-lang package index is community-maintained and 
-          lists open source Fortran-related projects.
-          This includes large-scale scientific applications,
-          function libraries, Fortran interfaces, and developer tools.
-        </p>
-        <p>
-        See
-	        <a href="https://github.com/fortran-lang/fortran-lang.org/blob/master/PACKAGES.md" target="_blank">
-          <i class="devicon-github-plain colored"></i> here</a> for how to get your project listed.
-        </p>
-        <p>
-          Use the box above to search the package index by keyword, package name, or author username.
-        </p>
-
-      </div>
-
-      <div class="col-narrow">
-        <h3><i data-feather="tag"></i>
-          Featured topics</h3>
-        <div id="package-topics"></div>
-      </div>
-
+    <div class="col-center">
+      <form class="search-form" action="{{ site.baseurl }}/packages/search" method="get">
+        {% capture placeholder %}{% t packages.search_for_a_package %}{% endcapture %}
+        <input type="text" name="query" class="search-box" placeholder="{{ placeholder }}">
+        <input type="submit" value="" class="search-btn">
+      </form>
     </div>
-  </section>
+
+    <div class="col-narrow">
+      {% tf packages/package_index.html %}
+    </div>
+
+    <div class="col-narrow">
+      <h3><i data-feather="tag"></i>
+        {% t packages.featured_topics %}
+      </h3>
+      <div id="package-topics"></div>
+    </div>
+
+  </div>
+</section>
 
 <section class="front-section">
   <div class="container">
-  <h2>Browse Packages by Category</h2>
+    <h2>{% t packages.browse %}</h2>
 
-  
-
-  <div class="container-flex">
+    <div class="container-flex">
 
       {% for sitePage in site.pages %}
 
@@ -67,36 +51,31 @@ description: A rich ecosystem of high-performance code
       <div class="col-flex">
         <h3>
           {% if sitePage.feather-icon %}
-            <i data-feather="{{ sitePage.feather-icon }}"></i>
-            {% endif %}
+          <i data-feather="{{ sitePage.feather-icon }}"></i>
+          {% endif %}
           <a href="{{ site.baseurl }}{{ sitePage.url }}" >
-            {{ sitePage.title }}
+            {% t sitePage.title %}
             {% if sitePage.code_category == 'fpm' %}
-              {% assign catProjects =  site.data.fpm_registry_index.packages %}
+            {% assign catProjects =  site.data.fpm_registry_index.packages %}
             {% else %}
-              {% assign catProjects =  site.data.package_index | where_exp:"project", "project.categories contains sitePage.code_category"%}
+            {% assign catProjects =  site.data.package_index | where_exp:"project", "project.categories contains sitePage.code_category"%}
             {% endif %}
             ({{ catProjects | size }})
           </a></h3>
-          <p> {{ sitePage.description }} </p>
-        </div>
+          <p> {% t sitePage.description %} </p>
+      </div>
       {% endif %}
       {% endif %}
 
       {% endfor%}
     </div>
-    </div>
+  </div>
 </section>
 
 <section class="front-section shaded">
   <div class="container">
     <div class="col-wide">
-      
-     See
-	  <a href="https://github.com/fortran-lang/fortran-lang.org/blob/master/PACKAGES.md" target="_blank">
-          <i class="devicon-github-plain colored"></i> here</a> for how to get your project listed.
-
+      {% tf packages/footer_text.html %}
+    </div>
   </div>
 </section>
-
-

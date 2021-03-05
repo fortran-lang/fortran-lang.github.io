@@ -1,4 +1,5 @@
 <div class="aside-important">
-    {% capture mdcontent %}__{{include.title | default: "Important:"}}__ {{include.content}}{% endcapture %}
+    {% capture default_title %}{% t book.important %}:{% endcapture %}
+    {% capture mdcontent %}__{{include.title | default: default_title}}__ {{include.content}}{% endcapture %}
     {{ mdcontent | markdownify}}
 </div>

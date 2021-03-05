@@ -2,20 +2,21 @@
 layout: default
 ---
 
-{% include nav.html active="News" %}
+{% capture active %}{% t nav_key.news %}{% endcapture %}
+{% include nav.html active=active %}
 
 <section class="front-section">
   <div class="container">
     <div class="newsletter col-wide">
 
-      <a href="{{ site.baseurl }}/news" > < Back to news</a>
+       <a href="{{ site.baseurl }}/news" > < {% t news.back_to_news %}</a>
 
       <h1>{{ page.title }}</h1>
 
       <div style="margin-top: 0.5em; margin-bottom: 0.5em;">
         <p><i>{{ page.date | date: "%B %d, %Y" }}</i></p>
         {% if page.author != null %}
-          <p><b>Authors:</b> {{ page.author }}</p>
+          <p><b>{% t news.authors %}</b> {{ page.author }}</p>
         {% endif %}
       </div>
 

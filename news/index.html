@@ -1,9 +1,10 @@
 ---
 layout: default
-title: News
+title: page.news.title
 ---
 
-{% include nav.html active="News" %}
+{% capture active %}{% t nav_key.news %}{% endcapture %}
+{% include nav.html active=active %}
 
 <section class="front-section">
   <div class="container">
@@ -11,22 +12,22 @@ title: News
 
       {% for post in site.categories.newsletter limit:5 %}
 
-        <h1>{{ post.title }}</h1>
+      <h1>{{ post.title }}</h1>
 
-        <div style="margin-top: 0.5em; margin-bottom: 0.5em;">
-          <p><b>{{ post.date | date: "%d %B %Y" }}</b></p>
-            {% if post.author %}
-              <p><b>Authors:</b> {{ post.author }}</p>
-            {% endif %}
-        </div>
-        
-        {% if post.title == site.categories.newsletter.first.title %}
-          {{ post.content }}
-        {% else %}
-          {{ post.excerpt }}
-          <a class="release-date" href="{{ site.baseurl }}{{ post.url }}">
-            Read more > </a>
+      <div style="margin-top: 0.5em; margin-bottom: 0.5em;">
+        <p><b>{{ post.date | date: "%d %B %Y" }}</b></p>
+        {% if post.author %}
+        <p><b>{% t news.authors %}:</b> {{ post.author }}</p>
         {% endif %}
+      </div>
+
+      {% if post.title == site.categories.newsletter.first.title %}
+      {{ post.content }}
+      {% else %}
+      {{ post.excerpt }}
+      <a class="release-date" href="{{ site.baseurl }}{{ post.url }}">
+        {% t news.read_more %} > </a>
+      {% endif %}
       </br>
 
       {% endfor %}
@@ -37,13 +38,12 @@ title: News
   </div>
 </section>
 
-  <section class="front-section shaded">
-    <div class="container">
-      <div class="col-wide">
-        
-        See the 
-          <a href="{{ site.baseurl }}/news/archive">news archive</a> for older posts  
-      </div>
+<section class="front-section shaded">
+  <div class="container">
+    <div class="col-wide">
+
+      {% tf news/see_archive.html %}
     </div>
+  </div>
 
 </section>

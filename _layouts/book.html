@@ -2,7 +2,8 @@
 layout: default
 ---
 
-{% include nav.html active="Learn" %}
+{% capture active %}{% t nav_key.learn %}{% endcapture %}
+{% include nav.html active=active %}
 
 <section class="front-section">
   <div class="container">
@@ -16,7 +17,7 @@ layout: default
       <div style="margin-top: 0.5em; margin-bottom: 0.5em;">
         <i>{{ page.date | date: "%B %d, %Y" }}</i>
         {% if page.author != null %}
-          <p><i>Authors:</i> {{ page.author }}</p>
+          <p><i>{% t book.authors %}:</i> {{ page.author }}</p>
         {% endif %}
       </div>
 
@@ -31,7 +32,7 @@ layout: default
             <a href="{{ site.baseurl }}{{ book.pages[prevPage].link }}" style="margin-right: auto;">
           {% endif %}
             <h3><i class="fas fa-arrow-circle-left"></i>
-              Back
+              {% t book_nav.back %}
             </h3>
           </a>
         {% endif %}
@@ -41,7 +42,7 @@ layout: default
           <a href="{{ site.baseurl }}{{ book.pages[nextPage].link }}"
           style="margin-left: auto;">
             <h3>
-              Next
+              {% t book_nav.next %}
               <i class="fas fa-arrow-circle-right"></i>
             </h3>
           </a>

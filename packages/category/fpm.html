@@ -1,21 +1,19 @@
 ---
 layout: default
-title: FPM Registry Packages
-description: Packages listed in the fpm-registry
+title: page.packages.category.fpm.title
+description: page.packages.category.fpm.description
 permalink: /packages/fpm
 code_category: fpm
 feather-icon: package
 ---
 
 
-{% include nav.html active='Packages' %}
+{% capture active %}{% t nav_key.packages %}{% endcapture %}
+{% include nav.html active=active %}
 
 <section class="masthead">
-    <h1>FPM Registry</h1>
-    <h3>Projects compatible with the
-        <a href="https://github.com/fortran-lang/fpm" target="_blank">
-            Fortran Package Manager</a>
-    </h3>
+    <h1>{% t packages.fpm_registry %}</h1>
+    <h3>{% t packages.fpm_packages %}</h3>
   </section>
   
   <section class="front-section">
@@ -24,7 +22,7 @@ feather-icon: package
         
         <a href="{{site.baseurl}}/packages">
             <i class="fas fa-arrow-circle-left"></i>
-            Back to all Packages
+            {% t packages.back %}
           </a>
   
           <table class="projects-table">
@@ -50,8 +48,8 @@ feather-icon: package
               </tr>
 
               <tr><td colspan="3" class="light small">
-                <b>Author: </b>  {{ vers[1].author | join: " and " }} &nbsp &nbsp
-                <b>Maintainer: </b>  {{ vers[1].maintainer | join: " and " }}
+              <b>{% t packages.author %}: </b>  {{ vers[1].author | join: " and " }} &nbsp &nbsp
+              <b>{% t packages.maintainer %}: </b>  {{ vers[1].maintainer | join: " and " }}
               </td></tr>
               {% if vers[1].description %}
               <tr><td colspan="3" class="light small">
@@ -77,11 +75,7 @@ feather-icon: package
       <div class="col-wide">
         <!-- <h2 id="faqs">FAQ</h2> -->
         
-        See
-	  <a href="https://github.com/fortran-lang/fpm-registry" target="_blank">
-      <i class="devicon-github-plain colored"></i> here</a> to find out more about the fpm registry
-        and how you can get your fpm compatible package listed.
-  
+        {% tf packages/fpm_footer.html %}
     </div>
   </section>
   

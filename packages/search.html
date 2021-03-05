@@ -1,38 +1,37 @@
 ---
 layout: default
-title: Search
+title: page.packages.search.title
 ---
 
-{% include nav.html active='Packages' %}
+{% capture active %}{% t nav_key.packages %}{% endcapture %}
+{% include nav.html active=active %}
 
+<section class="front-section">
+  <div class="container">
+    <div class="col-wide">
 
-  <section class="front-section">
-    <div class="container">
-      <div class="col-wide">
-          
-          <h2> <a href='{{ site.baseurl }}/packages'> Packages</a> / {{page.title}}</h2>
-          
-          <form class="search-form" action="{{ site.baseurl }}/packages/search" method="get">
-            <input type="text" name="query" id="search-query" class="search-box" placeholder="Search for a project">
-            <input type="submit" value="" class="search-btn">
-          </form>
-        </br>
+      <h2> <a href='{{ site.baseurl }}/packages'> {% t nav_key.packages %}</a> / {% t page.title %}</h2>
 
-        <div style="margin-left: 30px; margin-right: 100px;" id="package-search-results"></div>
+      <form class="search-form" action="{{ site.baseurl }}/packages/search" method="get">
+        <input type="text" name="query" id="search-query" class="search-box" placeholder="{% t search_for_a_project %}">
+        <input type="submit" value="" class="search-btn">
+      </form>
+      </br>
 
-      </div>
-  
+      <div style="margin-left: 30px; margin-right: 100px;" id="package-search-results"></div>
+
     </div>
-  </section>
-  
-  <section class="front-section shaded">
-    <div class="container">
-      <div class="col-wide">
-        <!-- <h2 id="faqs">FAQ</h2> -->
-        
-      See
-	  <a href="https://github.com/fortran-lang/fortran-lang.org/blob/master/PACKAGES.md" target="_blank">
-          <i class="devicon-github-plain colored"></i> here</a> for how to get your project listed.
-  
+
+  </div>
+</section>
+
+<section class="front-section shaded">
+  <div class="container">
+    <div class="col-wide">
+      <!-- <h2 id="faqs">FAQ</h2> -->
+
+      {% tf packages/footer_text.html %}
+
     </div>
-  </section>
+  </div>
+</section>

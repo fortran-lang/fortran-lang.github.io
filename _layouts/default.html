@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{site.description}}">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    {% capture page_title %}{% t page.title %}{% endcapture %}
+    <title>{% if page_title.size > 0 %}{{ page_title }} - {% endif %}{% t global.title %}</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <script src="https://unpkg.com/feather-icons"></script>
-    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/assets/css/syntax.css" rel="stylesheet">
+    <link href="{{ site.baseurl_root }}/assets/css/main.css" rel="stylesheet">
+    <link href="{{ site.baseurl_root }}/assets/css/syntax.css" rel="stylesheet">
     <link rel="canonical" href="{{ site.url }}{% if page.canonical_url %}{{ page.canonical_url }}{% else %}{{ page.url }}{% endif %}" />
     <script src="https://kit.fontawesome.com/8d17d4fe97.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/github-activity-0.1.5/github-activity-0.1.5.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl_root }}/assets/github-activity-0.1.5/github-activity-0.1.5.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-    <script type="text/javascript" src="{{site.baseurl}}/assets/github-activity-0.1.5/github-activity-0.1.5.min.js"></script>
+    <script type="text/javascript" src="{{site.baseurl_root}}/assets/github-activity-0.1.5/github-activity-0.1.5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
     
     <!--[if lt IE 9]>
@@ -37,11 +38,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
     {% include google_analytics.html %}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/fortranlang.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/page_nav.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/gh-contributors.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/package_search.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/package_tags.js"></script>
+    <script src="{{ site.baseurl_root }}/assets/js/fortranlang.js"></script>
+    <script src="{{ site.baseurl_root }}/assets/js/page_nav.js"></script>
+    <script src="{{ site.baseurl_root }}/assets/js/gh-contributors.js"></script>
+    <script src="{{ site.baseurl_root }}/assets/js/package_search.js"></script>
+    <script src="{{ site.baseurl_root }}/assets/js/package_tags.js"></script>
     <script>
       feather.replace()
     </script>

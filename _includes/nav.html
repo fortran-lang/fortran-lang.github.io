@@ -4,11 +4,11 @@
 		
 		<h3>
 		<i data-feather="git-pull-request"></i>
-		<b>Site preview: </b>you are previewing unpublished changes for
+      <b>{% t global.site_preview %}: </b> {% t global.site_preview_info %}
 		
 		<a href="https://github.com/fortran-lang/fortran-lang.org/pull/{{site.pull_request}}" target="_blank">
 			<i class="devicon-github-plain colored"></i>
-			pull request {{site.pull_request}}</a>
+         {% t global.pull_request %} {{site.pull_request}}</a>
 		</h3>
 	</div></section>
 	{% endif %} 
@@ -17,22 +17,22 @@
 	    <div class="container-fluid">
 	    <div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-		    <span class="sr-only">Toggle navigation</span>
-		    <img src="{{ site.baseurl }}/assets/img/icons/icon-menu.svg" alt="Toggle navigation" class="navbar-top-align">
+         <span class="sr-only">{% t global.toogle_nav %}</span>
+		    <img src="{{ site.baseurl_root }}/assets/img/icons/icon-menu.svg" alt="Toggle navigation" class="navbar-top-align">
 		</button>
 		<a href="{{ site.baseurl }}/" class="navbar-brand">
-		    <img src="{{ site.baseurl }}/assets/img/fortran_logo_256x256.png" id="navbar-logo" alt="Fortran">
+		    <img src="{{ site.baseurl_root }}/assets/img/fortran_logo_256x256.png" id="navbar-logo" alt="Fortran">
 		</a>
 	    </div>
 	    <div class="collapse navbar-collapse navbar-top-align" id="menu">
 	        <ul class="nav navbar-nav navbar-right">
-		{% for nav in site.data.nav %}
+		{% for nav in site.translations[site.lang].nav %}
 		    {% if include.active == nav.title %}
 		    <li class="current">
 		    {% else %}
 		    <li>
 		    {% endif %}
-		    <a {% if nav.sections != null %}href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"{% else %}href="{{ site.baseurl }}{{ nav.url }}"{% endif %}>{{ nav.title }}</a>
+          <a {% if nav.sections != null %}href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"{% else %}href="{{ site.baseurl }}{{ nav.url }}"{% endif %}>{{ nav.title }}</a>
 		    {% if nav.sections != null %}
 			<ul class="dropdown-menu">
 			{% for section in nav.sections %}
@@ -46,22 +46,22 @@
 		{% endfor %}
 		<li>
 			<a  href="https://fortran-lang.discourse.group/" target="_blank">
-			<i class="fab fa-discourse"></i> <i class="icon-link" >Discourse</i>
+            <i class="fab fa-discourse"></i> <i class="icon-link" >{% t global.discourse %}</i>
 			</a>
 		</li>
 		<li>
 			<a href="https://twitter.com/fortranlang" target="_blank">
-				<i class="fab fa-twitter"></i> <i class="icon-link" >Twitter</i>
+            <i class="fab fa-twitter"></i> <i class="icon-link" >{% t global.twitter %}</i>
 			</a>
 		</li>
 		<li>
 			<a  href="https://github.com/fortran-lang" target="_blank">
-				<i class="fab fa-github"></i> <i class="icon-link" >Github</i>
+            <i class="fab fa-github"></i> <i class="icon-link" >{% t global.github %}</i>
 			</a>
 		</li>
 		<li>
 			<a  href="{{site.baseurl}}/news.xml" target="_blank">
-				<i class="fas fa-rss"></i> <i class="icon-link" >RSS Feed</i>
+            <i class="fas fa-rss"></i> <i class="icon-link" >{% t global.rss_feed %}</i>
 			</a>
 		</li>
 		</ul>
