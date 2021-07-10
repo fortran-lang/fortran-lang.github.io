@@ -239,7 +239,13 @@
   github: swig-fortran/flibcpp
   description: Fortran bindings to the C++ Standard Library
   categories: interfaces
-  tags: c++
+  tags: cpp
+
+- name: arrayfire-fortran
+  github: arrayfire/arrayfire-fortran
+  description: Fortran binding to the ArrayFire general purpose GPU library
+  categories: interfaces
+  tags: cpp gpu opencl
 
 # --- Compiler
 
