@@ -53,6 +53,23 @@ books:
       - link: /learn/os_setup/ides
       - link: /learn/os_setup/tips
 
+  - title: Fortran Best Practices
+    description: This tutorial collects a modern canonical way of doing things in Fortran.
+    category: Getting started
+    link: /learn/best_practices
+    pages:
+        - link: /learn/best_practices/style_guide
+        - link: /learn/best_practices/floating_point
+        - link: /learn/best_practices/integer_division
+        - link: /learn/best_practices/modules_programs
+        - link: /learn/best_practices/arrays
+        - link: /learn/best_practices/multidim_arrays
+        - link: /learn/best_practices/element_operations
+        - link: /learn/best_practices/allocatable_arrays
+        - link: /learn/best_practices/file_io
+        - link: /learn/best_practices/callbacks
+        - link: /learn/best_practices/type_casting
+
 # Web links listed at the bottom of the 'Learn' landing page
 #
 reference-links:
